@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>frogmems</h1>
+    <hr />
+    <div style="float: left">
+      <div>
+        <label for="txt_canvasWidthh">Width:<input type="number" min="1" max="8192" id="txt_canvasWidth" value="512"/></label>
+        <label for="txt_canvasHeight">Height:<input type="number" min="1" max="8192" id="txt_canvasHeight" value="384"/></label>
+        <button id="btn_setCanvasSize" onclick="setCanvasSize()">Set size</button>
+        </div>
+      <div>
+      <canvas id="canvas1" width="512" height="384" style="border: 1px solid black;"></canvas>
+      </div>
+      <div id="snapshotFrame1" style="display: none; border: 1px solid black">
+        <span>image snapshot for export:</span>
+        <hr />
+        <div>
+        <img id="targetImage1" />
+        </div>
+        <div><button onclick="hideSnapshotFrame()">Click to hide</button></div>
+      </div>
+      
+    </div>
+    <div style="float: left">
+      <div>
+        <span id="txt_errorMsg"></span>
+        <button id="btn_generate" onclick="generate()">generate</button>
+        <button id="btn_copy" onclick="copyCanvasToImage()">snapshot image for export</button>
+      </div>
+      <div>
+        <textarea id="txt_layers" cols="80" rows="50"></textarea>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
